@@ -3,19 +3,38 @@ package org.endorodrigo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import org.endorodrigo.DAO.PersonaDao;
 import org.endorodrigo.model.Persona;
+
+import java.util.Arrays;
 
 
 public class Main {
     public static void main(String[] args) {
+        //Instancia para realizar acciones CRUD
+        PersonaDao personaDao = new PersonaDao();
 
-        String hql = "SELECT p FROM Persona p";
+        //get
+        personaDao.listar();
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("HibernateEjemplo1");
+        //post
+        //Persona persona = new Persona("Andrea Jimenez","Ariza Rodriguez","test@gmail.com","13453422");
+        //personaDao.salvar(persona);
 
-        try (EntityManager em = emf.createEntityManager()) {
-            var personas = em.createQuery(hql, Persona.class).getResultList();
-            personas.forEach(persona -> System.out.println(" " + persona));
-        }
+        //put
+        Persona persona = new Persona();
+        persona.setId(2);
+        persona.setNombre("Juanito");
+        persona.setApellido("Juanito");
+        persona.setEmail("test@gmail.com");
+        persona.setTelefono("12345");
+        //personaDao.update(persona);
+
+        //Detele
+        personaDao.delete(persona);
+
+        //GET(ID)
+        //System.out.println("find user = " + personaDao.getPersona(persona.getId()));
+
     }
 }

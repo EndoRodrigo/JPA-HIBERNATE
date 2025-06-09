@@ -4,7 +4,7 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
-    <persistence-unit name="HibernateEjemplo1" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="HibernatePU" transaction-type="RESOURCE_LOCAL">
         <!-- Proveedor JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Entidades -->
