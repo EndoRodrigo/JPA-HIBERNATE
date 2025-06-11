@@ -8,7 +8,11 @@
         <!-- Proveedor JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Entidades -->
-        <class>org.endorodrigo.model.Persona</class>
+        <class>org.endorodrigo.model.Alumno</class>
+        <class>org.endorodrigo.model.Asignacion</class>
+        <class>org.endorodrigo.model.Contacto</class>
+        <class>org.endorodrigo.model.Curso</class>
+        <class>org.endorodrigo.model.Domicilio</class>
         <!-- Configuración JDBC para MariaDB -->
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/qa?useSSL=true&amp;useTimezone=true&amp;serverTimezone=UTC"/>
@@ -20,7 +24,7 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <!--property name="hibernate.format_sql" value="true"/-->
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
 
         </properties>
     </persistence-unit>
